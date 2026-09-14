@@ -153,8 +153,16 @@
     <ul>
       <li><strong>activeTab</strong> — to identify the Messenger tab you want to export and send it a start signal from the popup.</li>
       <li><strong>scripting</strong> — to run the capture script on that tab.</li>
+      <li><strong>notifications</strong> — to show a local browser notification when a capture finishes or stops, entirely on your device. No notification content is sent anywhere.</li>
       <li><strong>Host access to messenger.com and facebook.com</strong> — required so the capture script can run on those pages and read the on-screen conversation.</li>
     </ul>
+    <p>
+      The extension also includes a background service worker. It only reacts
+      to messages sent from the extension's own content script (to show the
+      running indicator on the toolbar icon and the completion notification)
+      — it does not run on a schedule, does not access the network, and does
+      not read or transmit any conversation data itself.
+    </p>
 
     <h2>Third parties</h2>
     <p>
